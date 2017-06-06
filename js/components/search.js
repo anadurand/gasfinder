@@ -8,9 +8,9 @@ const stationItem = (station, update) => {
   const pDistrict = $('<p class="district">' + station.district + '</p>');
 
   item.append(h3);
-  item.append(icon);
   item.append(pAddress);
   item.append(pDistrict);
+  item.append(icon);
 
   icon.on("click", (e) => {
     e.preventDefault();
@@ -23,9 +23,8 @@ const stationItem = (station, update) => {
 
 const reRender = (container, filterStations, update) => {
   container.empty();
-  console.log(container);
+  //console.log(container);
   filterStations.forEach((station) => {
-    //console.log(station);
     container.append(stationItem(station, update));
   });
 }
@@ -38,12 +37,10 @@ const Search = (update) => {
   const containerStations = $('<div class="container-stations"></div>');
 
   input.on("keyup", (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     const filterStations = filterByDistrict(state.stations, $(e.currentTarget).val());
     reRender(containerStations, filterStations,update);
   });
-
-
   search.append(icon);
   search.append(input);
   parent.append(search);
