@@ -12,24 +12,23 @@ const Gmaps = (update) => {
   //Crea el mapa
   const map = new GMaps({
     div: '#map',
-    lat: state.selectedStation.lat,
-    lng: state.selectedStation.long
+    lat: -12.043333,
+    lng: -77.028333
   });
   //Añade marcador de la estacion seleccionada
-  map.addMarker({
-    lat: state.selectedStation.lat,
-    lng: state.selectedStation.long,
-    title: state.selectedStation.name,
+  // map.addMarker({
+    // lat: state.selectedStation.lat,
+    // lng: state.selectedStation.long,
+    // title: state.selectedStation.name
     // infoWindow: {
     //   content: '<strong>Estación de gas:</strong><p>'+state.selectedStation.address+'</p>'
     // }
-  });
 
   //Detalle de la ubicacion actual
   GMaps.geolocate({
     success: function(position) {
         map.setCenter(position.coords.latitude, position.coords.longitude);
-        map.setZoom(13);
+        map.setZoom(14);
         //Funcion añade el marcador
         map.addMarker({
           lat: position.coords.latitude,
@@ -44,6 +43,11 @@ const Gmaps = (update) => {
           strokeColor: '#131540',
           strokeOpacity: 0.6,
           strokeWeight: 4
+        });
+        map.addMarker({
+          lat: state.selectedStation.lat,
+          lng: state.selectedStation.long,
+          title: 'Estación:' + state.selectedStation.name,
         });
 
         map.getRoutes({
