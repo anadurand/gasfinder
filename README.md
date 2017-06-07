@@ -1,4 +1,4 @@
-# gasfinder
+# Ejercicio: Gasfinder
 
 ## Resumen ejecutivo
 
@@ -38,9 +38,7 @@ Se está incluyendo las siguientes librerias:
 - font awesome ([http://fontawesome.io/](http://fontawesome.io/))
 - jquery ([https://jquery.com/](https://jquery.com/))
 
-## Instrucciones
+## Desarrolo del Ejercicio
 
-1. Clonar el repositorio hacia tu cuenta personal para empezar con las modificaciones.
-2. Crea el componente search
-3. Crea el componente stationDetails
-4. Crea el componente gmap
+  En el siguiente link se muestra la aplicación desarrolada en su totalidad:
+  ([https://anadurand.github.io/gasfinder/])(GasFinder)
