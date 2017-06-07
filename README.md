@@ -40,5 +40,6 @@ Se está incluyendo las siguientes librerias:
 
 ## Desarrolo del Ejercicio
 
+  Los usuarios de esta aplicación recurrirán más a sus celulares para ubicar las diferentes estaciones, por ello se desarrolló mobil first.
   En el siguiente link se muestra la aplicación desarrolada en su totalidad:
-  ([GasFinder](https://anadurand.github.io/gasfinder/))
+  [GasFinder](https://anadurand.github.io/gasfinder/)
