@@ -41,4 +41,4 @@ Se está incluyendo las siguientes librerias:
 ## Desarrolo del Ejercicio
 
   En el siguiente link se muestra la aplicación desarrolada en su totalidad:
-  ([https://anadurand.github.io/gasfinder/])(GasFinder)
+  ([GasFinder](https://anadurand.github.io/gasfinder/))
