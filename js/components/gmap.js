@@ -3,11 +3,12 @@
 const Gmaps = (update) => {
   const parent = $('<div></div>');
   const mapa = $('<div class="mapa" id="map"></div>');
+  const distancia = $('<div class="distancia"></div>');
 
   parent.append(mapa);
 
  $(_=>{
-    //cuando esta ready
+  //Cuando esta ready
   //Crea el mapa
   const map = new GMaps({
     div: '#map',
@@ -19,23 +20,23 @@ const Gmaps = (update) => {
     lat: state.selectedStation.lat,
     lng: state.selectedStation.long,
     title: state.selectedStation.name,
-    infoWindow: {
-      content: '<strong>Estacion de gas:</strong><p>'+state.selectedStation.address+'</p>'
-    }
+    // infoWindow: {
+    //   content: '<strong>Estación de gas:</strong><p>'+state.selectedStation.address+'</p>'
+    // }
   });
 
-  //detalle de la ubicacion actual
+  //Detalle de la ubicacion actual
   GMaps.geolocate({
     success: function(position) {
         map.setCenter(position.coords.latitude, position.coords.longitude);
         map.setZoom(13);
-        //funcion añade el marcador
+        //Funcion añade el marcador
         map.addMarker({
           lat: position.coords.latitude,
           lng: position.coords.longitude,
           title: "Posición actual",
         });
-        //traza la ruta
+        //Traza la ruta
         map.drawRoute({
           origin: [position.coords.latitude, position.coords.longitude],
           destination: [state.selectedStation.lat, state.selectedStation.long],
@@ -43,6 +44,17 @@ const Gmaps = (update) => {
           strokeColor: '#131540',
           strokeOpacity: 0.6,
           strokeWeight: 4
+        });
+
+        map.getRoutes({
+          origin: [position.coords.latitude, position.coords.longitude],
+          destination: [state.selectedStation.lat, state.selectedStation.long],
+          callback: function(response){
+              var duration = response[0].legs[0].duration.text;
+              var distance = response[0].legs[0].distance.value/1000;
+              distancia.append(`${distance} KM`);
+              parent.append(distancia);
+          }
         });
 
     },
