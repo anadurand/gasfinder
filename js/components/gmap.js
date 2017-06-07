@@ -49,11 +49,11 @@ const Gmaps = (update) => {
         map.getRoutes({
           origin: [position.coords.latitude, position.coords.longitude],
           destination: [state.selectedStation.lat, state.selectedStation.long],
-          callback: function(response){
-              var duration = response[0].legs[0].duration.text;
-              var distance = response[0].legs[0].distance.value/1000;
-              distancia.append(`${distance} KM`);
+          callback: function(result){
+              const distance = result[0].legs[0].distance.value/1000;
+              distancia.append(`Distancia : ${distance} KM`);
               parent.append(distancia);
+              //const duration = result[0].legs[0].duration.text; Tiempo del recorrido
           }
         });
 
