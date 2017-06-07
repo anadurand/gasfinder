@@ -3,7 +3,7 @@
 const stationItem = (station, update) => {
   const item = $('<div class="station"></div>');
   const h3 = $('<h3 class="title">'+ station.name +'</h3>');
-  const icon = $('<a href="#" class="bandera">detalle</a>');
+  const icon = $('<a href="#" class="fa fa-map icon-map"></a>');
   const pAddress = $('<p clas="address">'+ station.address + '</p>');
   const pDistrict = $('<p class="district">' + station.district + '</p>');
 
@@ -31,9 +31,10 @@ const reRender = (container, filterStations, update) => {
 
 const Search = (update) => {
   const parent = $('<div></div>');
+  const div = $('<div class="container-search"></div>');
   const search = $('<div class="search"></div>');
-  const input = $('<input type="text" class="input">');
-  const icon = $('<i class="lupa"></i>');
+  const input = $('<input type="text" class="input" placeholder="Ingresar distrito">');
+  const icon = $('<i class="fa fa-search icono"></i>');
   const containerStations = $('<div class="container-stations"></div>');
 
   input.on("keyup", (e) => {
