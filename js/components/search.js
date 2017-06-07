@@ -13,7 +13,6 @@ const stationItem = (station, update) => {
   item.append(icon);
 
   icon.on("click", (e) => {
-    e.preventDefault();
     state.selectedStation = station;
     update();
   });
@@ -36,15 +35,22 @@ const Search = (update) => {
   const input = $('<input type="text" class="input" placeholder="Ingresar distrito">');
   const icon = $('<i class="fa fa-search icono"></i>');
   const containerStations = $('<div class="container-stations"></div>');
-
+  const alert = $('<p class="alert">No se encontro estacion es ese distrito</p>');
   input.on("keyup", (e) => {
-    //e.preventDefault();
-    const filterStations = filterByDistrict(state.stations, $(e.currentTarget).val());
-    reRender(containerStations, filterStations,update);
+    if($(e.currentTarget).val() != ""){
+      const filterStations = filterByDistrict(state.stations, $(e.currentTarget).val());
+      reRender(containerStations, filterStations,update);
+      if(filterStations.length == 0){
+        containerStations.append(alert);
+      }
+    }else{
+      containerStations.empty();
+    }
   });
   search.append(icon);
   search.append(input);
-  parent.append(search);
+  div.append(search)
+  parent.append(div);
   parent.append(containerStations);
 
   return parent;

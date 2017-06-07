@@ -7,11 +7,9 @@ const render = (root) => {
 
   if(state.selectedStation == null){
     wrapper.append(Search(_ => render(root)));
-    root.append(wrapper);
   }else{
     wrapper.append(Gmaps(_ => render(root)));
     wrapper.append(stationDetail(_ => render(root)));
-    //initMap();
   }
 
   root.append(wrapper);
