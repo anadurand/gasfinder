@@ -4,6 +4,10 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Header(_ => render(root)));
+  //es igual a wrapper.append(header(update));
+  //const update = function(){
+  //                render(root);
+  //                }
 
   if(state.selectedStation == null){
     wrapper.append(Search(_ => render(root)));
