@@ -26,7 +26,7 @@ const Gmaps = (update) => {
 
   //Detalle de la ubicacion actual
   GMaps.geolocate({
-    success: function(position) {
+    success: (position) => {
         map.setCenter(position.coords.latitude, position.coords.longitude);
         map.setZoom(14);
         //Funcion añade el marcador
