@@ -53,7 +53,7 @@ const Gmaps = (update) => {
         map.getRoutes({
           origin: [position.coords.latitude, position.coords.longitude],
           destination: [state.selectedStation.lat, state.selectedStation.long],
-          callback: function(result){
+          distant: function(result){
               const distance = result[0].legs[0].distance.value/1000;
               distancia.append(`Distancia : ${distance} KM`);
               parent.append(distancia);
