@@ -1,5 +1,5 @@
 'use strict';
-
+// para probarlo en local en el prompt serve -p 3000(localhost)
 const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
