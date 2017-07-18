@@ -53,9 +53,9 @@ const Gmaps = (update) => {
         map.getRoutes({
           origin: [position.coords.latitude, position.coords.longitude],
           destination: [state.selectedStation.lat, state.selectedStation.long],
-          distance: function(result){
-              const distance = result[0].legs[0].distance.value/1000;
-              distancia.append(`Distancia : ${distance} KM`);
+          callback: function(result){
+              const largo = result[0].legs[0].distance.value/1000;
+              distancia.append(`Distancia : ${largo} KM`);
               parent.append(distancia);
               //const duration = result[0].legs[0].duration.text; Tiempo del recorrido
           }
