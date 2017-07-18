@@ -69,10 +69,10 @@
   "long": -76.9639354 ,
   "products": [86,90,95,97]
 },{
-  "name": "Repsol Comercial S.A.C.",
+  "name": "Repsol Comercial S.A.C",
   "address": "Av.Universitaria Sur N° 546, con frente Calle Materiales N° 156",
   "district": "Lima",
-  "lat": 11.9882615,
+  "lat": -11.9882615,
   "long":-77.0811375,
   "products": [90,98,95,"S-50"]
 },{
