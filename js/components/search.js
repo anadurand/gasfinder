@@ -3,7 +3,7 @@
 const stationItem = (station, update) => {
   const item = $('<div class="station"></div>');
   const h3 = $('<h3 class="title">'+ station.name +'</h3>');
-  const icon = $('<a href="#" class="fa fa-map icon-map"></a>');
+  const icon = $('<a href="detalle" class="fa fa-map icon-map"></a>');
   const pAddress = $('<p clas="address">'+ station.address + '</p>');
   const pDistrict = $('<p class="district">' + station.district + '</p>');
 
